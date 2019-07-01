@@ -15,11 +15,10 @@
       <time id = 'time'></time>
       <h1>
         <span id="greeting"></span>
-        <span id="name">Charles</span>
+        <span id="name" contenteditable="true"></span>
       </h1>
 
-      <h2>What do you need to do today?</h2>
-      <h2 id="todo" contenteditable="true"></h2>
+
 <!--list and weather section -->
     <div class="container">
       <div class="row">
@@ -42,16 +41,20 @@
       <div class="col-md" id = "weather">
         <h1>Weather</h1>
         <div class="container">
-          <h2 id="city">Burlington</h2>
-          <div class="middle">
-            <img src="" alt="icon" id = "icon">
+          <input class ="searchControl" type="text" placeholder="City name or zipcode" id ="searchInput">
+          <button  id ="searchButton">Search</button>
+          <div>
+            <div id="weatherMain">
+
+                <h3 id = "city"></h3>
+                <div id="weatherDescription"></div>
+                <img id ="icon">
+                <div id="temperature"></div>
+                <div id="weatherHeader"></div>
+                <div id ="windSpeed" class = "bottomDetails"></div>
+                <div id ="humidity" class = "bottomDetails"></div>
+              </div>
           </div>
-          <div class="degree">
-            <h3 id="temp"></h3>
-            <span></span>
-          </div>
-          <h3>Rainy as f</h3>
-        </div>
 
       </div>
     </div>

@@ -1,7 +1,7 @@
 // DOM Elements
 const time = document.getElementById('time'),
   greeting = document.getElementById('greeting'),
-  todo = document.getElementById('todo');
+  name = document.getElementById('name');
 
 //Show time
 function showTime(){
@@ -44,32 +44,35 @@ function setBGGreet(){
   }
 }
 
-
-// get to do list
-function getTodo(){
-  if (localStorage.getItem('todo') === null){
-    todo.textContent = '[Enter task]';
+// get name
+function getName(){
+  if (localStorage.getItem('name') === null){
+    name.textContent = '[Enter Name]';
   }else{
-    todo.textContent= localStorage.getItem('todo');
+    name.textContent= localStorage.getItem('name');
   }
 }
-todo.addEventListener('keypress', setTodo);
-todo.addEventListener('blur', setTodo);
+
 //setTodo
-function setTodo(e){
+function setName(e){
   if(e.type === 'keypress'){
     //Make sure enter is pressed
     if(e.which == 13 || e.keyCode == 13){
-      localStorage.setItem('todo', e.target.innerText);
-      todo.blur();
+      localStorage.setItem('name', e.target.innerText);
+      name.blur();
     }
 
   }else{
-    localStorage.setItem('todo', e.target.innerText);
+    localStorage.setItem('name', e.target.innerText);
   }
 }
+
+
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
+
 
 //Run
 showTime();
 setBGGreet();
-getTodo();
+getName();
