@@ -39,8 +39,8 @@ static showAlert(message, className){
    div.className = `alert alert-${className}`;
    div.appendChild(document.createTextNode(message));
    const container = document.querySelector('.container');
-   const form = document.querySelector('#task-form');
-   container.insertBefore(div, form);
+   const list = document.querySelector('#list');
+   table.insertBefore(div, list);
 
    //Vanish after 3 sec
    setTimeout(()=>document.querySelector('.alert').remove(), 3000);
@@ -122,11 +122,11 @@ document.querySelector('#task-form').addEventListener('submit', (e) => {
 
 });
 
-//Event: Remove a Book
+//Event: Remove an task
 document.querySelector('#task-list').addEventListener('click', (e) => {
   UI.deleteTask(e.target)
 
-  //Remove book from Store
+  //Remove task from list
   Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
   //Show successful deleteion
   UI.showAlert('Task deleted', 'success');

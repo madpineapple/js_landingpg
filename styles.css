@@ -33,12 +33,21 @@ h2{
   margin-bottom: 0.5rem;
   opacity: 0.6;
 }
+tr{
+  color:orange;
+}
+
+#list{
+  height:200px;
+  overflow-y: scroll;
+}
 
 @media(max-width:700px){
   #time{
     font-size: 6rem;
   }
 }
+
 
 .bg-modal{
   width: 100%;

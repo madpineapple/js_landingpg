@@ -1,4 +1,4 @@
-let appId='insert api key here';
+let appId='insert key';
 let units = 'Imperial';
 let searchMethod;
 
